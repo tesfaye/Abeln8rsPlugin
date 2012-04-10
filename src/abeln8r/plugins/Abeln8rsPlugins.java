@@ -30,7 +30,7 @@ public class Abeln8rsPlugins extends JavaPlugin
 	}
         if(player == null) 
 	{
-            sender.sendMessage("this command can only be run by a player");
+            sender.sendMessage("Sorry, only Players can use such commands!");
             return true;
         }else
         if(cmd.getName().equalsIgnoreCase("tk"))
