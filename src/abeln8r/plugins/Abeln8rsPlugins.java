@@ -40,30 +40,27 @@ public class Abeln8rsPlugins extends JavaPlugin
                 return false;
             }
             Player target = Bukkit.getPlayer(args[0]);
-            String message = args[1];
-            for(Player players: getServer().getOnlinePlayers()) 
-            {    
-                if(target.isOnline())
+            String message = args[1];   
+            if(target.isOnline())
+            {
+                String s;
+                if(target.isOp())
                 {
-                    String s;
-                    if(target.isOp())
-                    {
-                        String pname = ChatColor.DARK_RED + target.getDisplayName();
-                        s = "["+target.getWorld().getName()+"]<" + pname + ChatColor.WHITE + "> " + message;
-                        players.sendMessage(s);
-                    }else
-                    {
-                        s = "["+target.getWorld().getName()+"]<" + target.getDisplayName() + "> " + message;
-                        players.sendMessage(s);
-                    }
-                    return true;
+                    String pname = ChatColor.DARK_RED + target.getDisplayName();
+                    s = "["+target.getWorld().getName()+"]<" + pname + ChatColor.WHITE + "> " + message;
+                    Bukkit.getServer().broadcastMessage(s);
                 }else
                 {
-                    players.sendMessage("[world]<" + args[0] + "> " + message);
-                    return true;
+                    s = "["+target.getWorld().getName()+"]<" + target.getDisplayName() + "> " + message;
+                    Bukkit.getServer().broadcastMessage(s);
                 }
-            }
-        }  
+                return true;
+           }else
+           {
+                Bukkit.getServer().broadcastMessage("[world]<" + args[0] + "> " + message);
+                return true;
+           }  
+        }
         return false;
     }
     private boolean hasAdminAccess(CommandSender sender)
