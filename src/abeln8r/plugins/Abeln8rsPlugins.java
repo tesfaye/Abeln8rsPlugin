@@ -41,7 +41,7 @@ public class Abeln8rsPlugins extends JavaPlugin
             }
             Player target = Bukkit.getPlayer(args[0]);
             String message = args[1];   
-            if(target.isOnline())
+            if(target != null)
             {
                 String s;
                 if(target.isOp())
