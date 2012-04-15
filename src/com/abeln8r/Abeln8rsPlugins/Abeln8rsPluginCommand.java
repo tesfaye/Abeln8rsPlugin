@@ -1,5 +1,6 @@
 package com.abeln8r.Abeln8rsPlugins;
 
+import java.util.logging.Level;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -51,7 +52,7 @@ public class Abeln8rsPluginCommand implements CommandExecutor
            {
                 Bukkit.getServer().broadcastMessage("[world]<" + args[0] + "> " + message);
            }  
-           plugin.getLogger().info(player.getName()+": "+ commandLabel);
+           plugin.getLogger().log(Level.INFO, "{0}: {1}", new Object[]{player.getName(), commandLabel});
            return true;
         }
         return false;

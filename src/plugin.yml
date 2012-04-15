@@ -1,5 +1,5 @@
 name: Abeln8rs Plugin
-main: abeln8r.plugins.Abeln8rsPlugins
+main: com.abeln8r.Abeln8rsPlugins.Abeln8rsPlugins
 version: 2
 softdepend: []
 commands:
