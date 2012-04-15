@@ -4,6 +4,6 @@ version: 2
 softdepend: []
 commands:
    tk:
-      description: allows you to talk as another player.
+      description: Allows you to talk as another player.
       usage: |
            /<command> <playername> <message>

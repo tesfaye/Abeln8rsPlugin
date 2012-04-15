@@ -1,6 +1,5 @@
 package com.abeln8r.Abeln8rsPlugins;
 
-import java.util.logging.Level;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -52,14 +51,12 @@ public class Abeln8rsPlugins extends JavaPlugin
                     s = "["+target.getWorld().getName()+"]<" + target.getDisplayName() + "> " + message;
                     Bukkit.getServer().broadcastMessage(s);
                 }
-                getLogger().log(Level.INFO, "{0}: {1}", new Object[]{target.getDisplayName(), commandLabel});
-                return true;
            }else
            {
                 Bukkit.getServer().broadcastMessage("[world]<" + args[0] + "> " + message);
-                getLogger().log(Level.INFO, "{0}: {1}", new Object[]{args[0], commandLabel});
-                return true;
            }  
+           getLogger().info(player.getDisplayName() + ": /" + cmd.getName() + " "+ args[0] + " " + args[1]);
+           return true;
         }
         return false;
     }
