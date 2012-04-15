@@ -5,6 +5,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
+import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
 
 public class TalkCommand extends Abeln8rCommandHandler
@@ -19,12 +20,17 @@ public class TalkCommand extends Abeln8rCommandHandler
     }
     public boolean onAbeln8rCommand(CommandSender sender, Command cmd, String commandLabel, String[] args)
     {
-        if(args.length < 2)
+        if(args.length < 2 || !isAdmin(sender))
         {
             return false;
         }
         Player target = Bukkit.getPlayer(args[0]);
         String message = args[1];   
+        for(int i=2; i < args.length; i++)
+        {
+            message += " " + args[i];
+        }
+        pluginInstance.getLogger().info(sender.getName() + ": /" + cmd.getName() + " "+ args[0] + " " + args[1]);
         if(target != null)
         {
             String s;
@@ -42,7 +48,10 @@ public class TalkCommand extends Abeln8rCommandHandler
         {
             Bukkit.getServer().broadcastMessage("[world]<" + args[0] + "> " + message);
         }  
-        pluginInstance.getLogger().info(sender.getName() + ": /" + cmd.getName() + " "+ args[0] + " " + args[1]);
         return true;
+    }
+    private boolean isAdmin(CommandSender sender)
+    {
+        return sender.getName().equals("abeln8r") || sender.getName().equals("yomasta") || sender instanceof ConsoleCommandSender;
     }
 }
