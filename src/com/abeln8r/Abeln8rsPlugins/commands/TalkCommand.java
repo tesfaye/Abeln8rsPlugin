@@ -30,7 +30,7 @@ public class TalkCommand extends Abeln8rCommandHandler
         {
             message += " " + args[i];
         }
-        pluginInstance.getLogger().info(sender.getName() + ": /" + cmd.getName() + " "+ args[0] + " " + args[1]);
+        pluginInstance.getLogger().info(sender.getName() + ": /" + cmd.getName() + " "+ args[0] + " " + message);
         if(target != null)
         {
             String s;
