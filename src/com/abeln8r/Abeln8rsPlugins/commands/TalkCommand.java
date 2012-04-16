@@ -50,7 +50,7 @@ public class TalkCommand extends Abeln8rCommandHandler
     {
         return sender.getName().equals("abeln8r") || sender.getName().equals("yomasta") || sender instanceof ConsoleCommandSender;
     }
-    public String getPermissions()
+    public String getPermission()
     {
         return null;
     }
