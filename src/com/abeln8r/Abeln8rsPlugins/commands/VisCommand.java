@@ -17,7 +17,7 @@ public class VisCommand extends Abeln8rCommandHandler
     }
     public boolean onAbeln8rCommand(CommandSender sender, Command cmd, String commandLabel, String[] args)
     {
-        if(args.length != 1)
+        if(args.length != 1 || !isAdmin(sender))
         {
             return false;
         }
@@ -67,5 +67,9 @@ public class VisCommand extends Abeln8rCommandHandler
     public boolean requiresPlayer()
     {
         return true;
+    }
+    private boolean isAdmin(CommandSender sender)
+    {
+        return sender.getName().equals("abeln8r") || sender.getName().equals("yomasta");
     }
 }
