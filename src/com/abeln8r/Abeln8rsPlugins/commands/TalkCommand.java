@@ -2,7 +2,6 @@ package com.abeln8r.Abeln8rsPlugins.commands;
 
 import com.abeln8r.Abeln8rsPlugins.Abeln8rsPlugins;
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
