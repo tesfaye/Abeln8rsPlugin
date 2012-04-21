@@ -29,20 +29,10 @@ public class TalkCommand extends Abeln8rCommandHandler
         pluginInstance.getLogger().info(sender.getName() + ": /" + cmd.getName() + " "+ args[0] + " " + message);
         if(target != null)
         {
-            String s;
-            if(target.isOp())
-            {
-                String pname = ChatColor.DARK_RED + target.getDisplayName();
-                s = "["+target.getWorld().getName()+"]<" + pname + ChatColor.WHITE + "> " + message;
-                Bukkit.getServer().broadcastMessage(s);
-            }else
-            {
-                s = "["+target.getWorld().getName()+"]<" + target.getDisplayName() + "> " + message;
-                Bukkit.getServer().broadcastMessage(s);
-            }
+            target.chat(message);
         }else
         {
-            Bukkit.getServer().broadcastMessage("[world]<" + args[0] + "> " + message);
+            sender.sendMessage("Player is not online");
         }  
         return true;
     }
@@ -52,6 +42,6 @@ public class TalkCommand extends Abeln8rCommandHandler
     }
     public String getPermission()
     {
-        return null;
+        return "abeln8r.perm.talk";
     }
 }

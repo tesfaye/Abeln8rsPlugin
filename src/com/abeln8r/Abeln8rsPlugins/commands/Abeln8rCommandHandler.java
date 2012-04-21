@@ -20,7 +20,14 @@ public abstract class Abeln8rCommandHandler implements CommandExecutor
             return true;
         }else
         {
-            return onAbeln8rCommand(sender, cmd, commandLabel, args);
+            if(sender.hasPermission(getPermission()))
+            {
+                return onAbeln8rCommand(sender, cmd, commandLabel, args);
+            }else
+            {
+                sender.sendMessage("You Do not have Permission to use this command!");
+                return true;
+            }
         }
     }
     public boolean requiresPlayer()
