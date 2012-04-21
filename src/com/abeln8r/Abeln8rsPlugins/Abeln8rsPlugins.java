@@ -8,7 +8,7 @@ public class Abeln8rsPlugins extends JavaPlugin
     public void onEnable()
     {
         getCommand("tk").setExecutor(new TalkCommand(this));
-        getCommand("hide").setExecutor(new HideCommand(this));
+        getCommand("vis").setExecutor(new VisCommand(this));
     }
     public void onDisable()
     {
