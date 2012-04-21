@@ -28,6 +28,7 @@ public class VisCommand extends Abeln8rCommandHandler
             {
                 players.hidePlayer(player);
             }
+            player.sendMessage("You are now hidden");
             isHidden.put(player, true);
             return true;
         }
@@ -36,8 +37,9 @@ public class VisCommand extends Abeln8rCommandHandler
             for(Player players: Bukkit.getOnlinePlayers())
             {
                 players.showPlayer(player);
-                isHidden.put(player, false);
             }
+            player.sendMessage("You are no longer hidden");
+            isHidden.put(player, false);
             return true;
         }
         if(args[0].equalsIgnoreCase("status"))
@@ -57,7 +59,7 @@ public class VisCommand extends Abeln8rCommandHandler
     }
     public String getPermission()
     {
-        return "abeln8r.perm.hide";
+        return "abeln8r.perm.vis";
     }
     public boolean requiresPlayer()
     {
