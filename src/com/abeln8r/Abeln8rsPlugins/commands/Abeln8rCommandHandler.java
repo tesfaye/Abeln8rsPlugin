@@ -1,6 +1,7 @@
 package com.abeln8r.Abeln8rsPlugins.commands;
 
 import com.abeln8r.Abeln8rsPlugins.Abeln8rsPlugins;
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -25,7 +26,7 @@ public abstract class Abeln8rCommandHandler implements CommandExecutor
                 return onAbeln8rCommand(sender, cmd, commandLabel, args);
             }else
             {
-                sender.sendMessage("You Do not have Permission to use this command!");
+                sender.sendMessage(ChatColor.RED + "You do not have access to that command.");
                 return true;
             }
         }

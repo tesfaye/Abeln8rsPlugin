@@ -22,12 +22,12 @@ public class HideCommand extends Abeln8rCommandHandler
         {
             if(players.canSee(player))
             {
-                player.sendMessage("You are now hidden");
                 players.hidePlayer(player);
+                player.sendMessage("You are now hidden");
             }else
             {
-                player.sendMessage("You are now visable");
                 players.showPlayer(player);
+                player.sendMessage("You are now visable");
             }
         }
         return true;
