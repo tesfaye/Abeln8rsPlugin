@@ -1,8 +1,6 @@
 package com.abeln8r.Abeln8rsPlugins.commands;
 
 import com.abeln8r.Abeln8rsPlugins.Abeln8rsPlugins;
-import java.util.HashMap;
-import java.util.Map;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -10,7 +8,6 @@ import org.bukkit.entity.Player;
 
 public class VisCommand extends Abeln8rCommandHandler
 {
-    private Map<Player, Boolean> isHidden = new HashMap<Player, Boolean>();
     public VisCommand(Abeln8rsPlugins instance)
     {
         super(instance);
@@ -29,8 +26,8 @@ public class VisCommand extends Abeln8rCommandHandler
                 players.hidePlayer(player);
             }
             player.sendMessage("You are now hidden");
-            pluginInstance.getLogger().info(sender.getName() + ": /" + cmd.getName() + " "+ args[0]);
-            isHidden.put(player, true);
+            plugin.getLogger().info(sender.getName() + ": /" + cmd.getName() + " "+ args[0]);
+            plugin.isHidden.put(player, true);
             return true;
         }
         if(args[0].equalsIgnoreCase("show"))
@@ -40,20 +37,20 @@ public class VisCommand extends Abeln8rCommandHandler
                 players.showPlayer(player);
             }
             player.sendMessage("You are no longer hidden");
-            pluginInstance.getLogger().info(sender.getName() + ": /" + cmd.getName() + " "+ args[0]);
-            isHidden.put(player, false);
+            plugin.getLogger().info(sender.getName() + ": /" + cmd.getName() + " "+ args[0]);
+            plugin.isHidden.put(player, false);
             return true;
         }
         if(args[0].equalsIgnoreCase("status"))
         {
-            if(isHidden.containsKey(player))
+            if(plugin.isHidden.containsKey(player))
             {
                 player.sendMessage("You are hidden");
             }else
             {
                 player.sendMessage("You are not hidden");
             }
-            pluginInstance.getLogger().info(sender.getName() + ": /" + cmd.getName() + " "+ args[0]);
+            plugin.getLogger().info(sender.getName() + ": /" + cmd.getName() + " "+ args[0]);
             return true;
         }else
         {

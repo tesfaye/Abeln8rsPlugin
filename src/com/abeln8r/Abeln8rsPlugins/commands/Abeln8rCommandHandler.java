@@ -11,7 +11,7 @@ public abstract class Abeln8rCommandHandler implements CommandExecutor
 {
     public Abeln8rCommandHandler(Abeln8rsPlugins plugininstance)
     {
-        pluginInstance = plugininstance;
+        plugin = plugininstance;
     }
     public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args)
     {
@@ -37,5 +37,5 @@ public abstract class Abeln8rCommandHandler implements CommandExecutor
     }
     public abstract String getPermission();
     public abstract boolean onAbeln8rCommand(CommandSender sender, Command cmd, String commandLabel, String[] args);
-    protected Abeln8rsPlugins pluginInstance;
+    protected Abeln8rsPlugins plugin;
 }
