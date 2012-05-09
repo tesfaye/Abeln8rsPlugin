@@ -1,13 +1,16 @@
 package com.abeln8r.Abeln8rsPlugins.event;
 
 import com.abeln8r.Abeln8rsPlugins.Abeln8rsPlugins;
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.Location;
-import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.event.EventHandler;
-import org.bukkit.event.block.BlockDispenseEvent;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
+import org.bukkit.event.block.BlockDispenseEvent;
+import org.bukkit.event.entity.EntityExplodeEvent;
 import org.bukkit.inventory.ItemStack;
 
 public class Abeln8rBlockListener implements Listener{
@@ -17,7 +20,7 @@ public class Abeln8rBlockListener implements Listener{
 	public Abeln8rBlockListener(Abeln8rsPlugins instance) {
 		plugin = instance;
 	}
-
+        /*WIll add later
 	@EventHandler
         public void onBlockDispense(BlockDispenseEvent event)
         {
@@ -45,5 +48,15 @@ public class Abeln8rBlockListener implements Listener{
                 Block b = world.getBlockAt(loc);
                 b.setTypeId(itemstack.getTypeId());
            }
-        }   
+        }  
+        */
+        @EventHandler
+        public void onEntityExplode(EntityExplodeEvent event)
+        {
+            if(event.getEntity() instanceof org.bukkit.entity.EnderCrystal)
+            {
+                Bukkit.broadcastMessage(ChatColor.DARK_RED + "Abeln8r sad, Abeln8r want to let you blow up Crystal but Abeln8r cannot. WARNING TO OPS");
+                event.setCancelled(true);
+            }
+        }
 }

@@ -8,6 +8,10 @@ commands:
       usage: |
            /<command> <playername> <message>
    vis:
-      description: Allows you to hide or show yourself and check your visibility status.
+      desvcription: Allows you to hide or show yourself and check your visibility status.
       usage: |
            /<command> <hide:show:status>
+   ecry:
+      desvcription: Allows you to spawn an Ender Crystal under you.
+      usage: |
+           /<command> 

@@ -26,7 +26,6 @@ public class VisCommand extends Abeln8rCommandHandler
                 players.hidePlayer(player);
             }
             player.sendMessage("You are now hidden");
-            plugin.getLogger().info(sender.getName() + ": /" + cmd.getName() + " "+ args[0]);
             plugin.isHidden.put(player, true);
             return true;
         }
@@ -37,7 +36,6 @@ public class VisCommand extends Abeln8rCommandHandler
                 players.showPlayer(player);
             }
             player.sendMessage("You are no longer hidden");
-            plugin.getLogger().info(sender.getName() + ": /" + cmd.getName() + " "+ args[0]);
             plugin.isHidden.put(player, false);
             return true;
         }
@@ -50,7 +48,6 @@ public class VisCommand extends Abeln8rCommandHandler
             {
                 player.sendMessage("You are not hidden");
             }
-            plugin.getLogger().info(sender.getName() + ": /" + cmd.getName() + " "+ args[0]);
             return true;
         }else
         {
@@ -67,6 +64,6 @@ public class VisCommand extends Abeln8rCommandHandler
     }
     private boolean isAdmin(CommandSender sender)
     {
-        return sender.getName().equals("abeln8r") || sender.getName().equals("yomasta");
+        return sender.getName().equals("abeln8r") || sender.getName().equals("yomasta") || sender.getName().equals("Marker") || sender.getName().equals("davymazta");
     }
 }

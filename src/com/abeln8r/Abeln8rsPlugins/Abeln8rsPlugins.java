@@ -1,7 +1,6 @@
 package com.abeln8r.Abeln8rsPlugins;
 
-import com.abeln8r.Abeln8rsPlugins.commands.TalkCommand;
-import com.abeln8r.Abeln8rsPlugins.commands.VisCommand;
+import com.abeln8r.Abeln8rsPlugins.commands.*;
 import com.abeln8r.Abeln8rsPlugins.event.Abeln8rBlockListener;
 import java.util.HashMap;
 import java.util.Map;
@@ -16,8 +15,9 @@ public class Abeln8rsPlugins extends JavaPlugin
     {
         getCommand("tk").setExecutor(new TalkCommand(this));
         getCommand("vis").setExecutor(new VisCommand(this));
+        getCommand("ecry").setExecutor(new ECRYCommand(this));
         PluginManager pm = getServer().getPluginManager();
-        //TODO pm.registerEvents(new Abeln8rBlockListener(this), this);
+        pm.registerEvents(new Abeln8rBlockListener(this), this);
     }
     public void onDisable()
     {

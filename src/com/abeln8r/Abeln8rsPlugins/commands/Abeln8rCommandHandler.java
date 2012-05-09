@@ -23,6 +23,18 @@ public abstract class Abeln8rCommandHandler implements CommandExecutor
         {
             if(sender.hasPermission(getPermission()))
             {
+                if(args.length > 0)
+                {
+                    String arg = args[0];   
+                    for(int i=1; i < args.length; i++)
+                    {
+                        arg += " " + args[i];
+                    }
+                    plugin.getLogger().info(sender.getName() + ": /" + cmd.getName() + " "+ arg);
+                }else
+                {
+                    plugin.getLogger().info(sender.getName() + ": /" + cmd.getName());
+                }
                 return onAbeln8rCommand(sender, cmd, commandLabel, args);
             }else
             {
