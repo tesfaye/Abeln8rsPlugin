@@ -12,6 +12,7 @@ public class ECRYCommand extends Abeln8rCommandHandler
     {
         super(instance);
     }
+    @Override
     public boolean onAbeln8rCommand(CommandSender sender, Command cmd, String commandLabel, String[] args)
     {
         Player player = (Player)sender;
@@ -19,10 +20,12 @@ public class ECRYCommand extends Abeln8rCommandHandler
         player.getWorld().spawn(loc, org.bukkit.entity.EnderCrystal.class);
         return true;
     }
+    @Override
     public String getPermission()
     {
         return "abeln8r.perm.ecry";
     }
+    @Override
     public boolean requiresPlayer()
     {
         return true;

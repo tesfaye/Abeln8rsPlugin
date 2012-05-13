@@ -54,10 +54,12 @@ public class VisCommand extends Abeln8rCommandHandler
             return false;
         }
     }
+    @Override
     public String getPermission()
     {
         return "abeln8r.perm.vis";
     }
+    @Override
     public boolean requiresPlayer()
     {
         return true;

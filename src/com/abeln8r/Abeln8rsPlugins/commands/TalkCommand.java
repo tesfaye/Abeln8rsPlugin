@@ -13,6 +13,7 @@ public class TalkCommand extends Abeln8rCommandHandler
     {
         super(instance);
     }
+    @Override
     public boolean onAbeln8rCommand(CommandSender sender, Command cmd, String commandLabel, String[] args)
     {
         if(args.length < 2 || !isAdmin(sender))
@@ -38,6 +39,7 @@ public class TalkCommand extends Abeln8rCommandHandler
     {
         return sender.getName().equals("abeln8r") || sender.getName().equals("yomasta") || sender instanceof ConsoleCommandSender;
     }
+    @Override
     public String getPermission()
     {
         return "abeln8r.perm.talk";

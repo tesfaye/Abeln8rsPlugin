@@ -13,6 +13,7 @@ public abstract class Abeln8rCommandHandler implements CommandExecutor
     {
         plugin = plugininstance;
     }
+    @Override
     public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args)
     {
         if(requiresPlayer() && !(sender instanceof Player))

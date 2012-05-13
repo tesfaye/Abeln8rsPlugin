@@ -11,6 +11,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class Abeln8rsPlugins extends JavaPlugin
 {
     public Map<Player, Boolean> isHidden = new HashMap<Player, Boolean>();
+    @Override
     public void onEnable()
     {
         getCommand("tk").setExecutor(new TalkCommand(this));
@@ -19,6 +20,7 @@ public class Abeln8rsPlugins extends JavaPlugin
         PluginManager pm = getServer().getPluginManager();
         pm.registerEvents(new Abeln8rBlockListener(this), this);
     }
+    @Override
     public void onDisable()
     {
         
