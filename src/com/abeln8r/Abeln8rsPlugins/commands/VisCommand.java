@@ -12,6 +12,7 @@ public class VisCommand extends Abeln8rCommandHandler
     {
         super(instance);
     }
+    @Override
     public boolean onAbeln8rCommand(CommandSender sender, Command cmd, String commandLabel, String[] args)
     {
         if(args.length != 1 || !isAdmin(sender))
